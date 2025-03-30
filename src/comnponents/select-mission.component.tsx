@@ -12,7 +12,7 @@ export function SelectMissionComponent({ missions }: Props) {
     }, [missions]);
 
     const handleChange = (event) => {
-        setSelected(event.target.value); // Directly setting the selected object
+        setSelected(event.target.value);
     };
 
     return (<>
