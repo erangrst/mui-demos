@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import { Tab, Tabs } from '@mui/material';
-import { SelectMissionComponent } from './comnponents/select-mission.component';
+import { SelectMissionComponent } from './components/select-mission.component';
 import { MissionModel } from './models/mission.model';
+import { ButtonsComponent } from './components/buttons.component';
 
 function App() {
 
@@ -28,6 +28,8 @@ function App() {
 
   function renderTabs() {
     if (tabValue === 'select-mission') { return <SelectMissionComponent missions={missions} /> }
+    if (tabValue === 'buttons-component') { return <ButtonsComponent /> }
+
   }
 
   return (
@@ -35,26 +37,10 @@ function App() {
       <Tabs onChange={handleTabChange}
         value={tabValue}>
         <Tab label="Select Mission" value='select-mission' />
+        <Tab label="Buttons" value='buttons-component' />
       </Tabs>
       {renderTabs()}
     </>
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.tsx</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
